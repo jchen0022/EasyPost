@@ -6,7 +6,7 @@
             <% if not @filled_form %>
               <%= render 'form' %>
             <% else %>
-              <%= @shipment_url %>
+              Your package label: <a href=<%= @shipment_url %>>Label</a>
             <% end %>
           </div>
         </div>
