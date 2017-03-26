@@ -1,73 +1,85 @@
 <%= form_for :info do |f| %>
-  <div class="row">
-    <p class="left5"><b>Source</b></p>
-    <div class="col-md-6"> 
-      <%= f.label :name %>
-      <%= f.text_field :from_name, class: 'form-control' %>
-      
-      <%= f.label :street_address_1 %>
-      <%= f.text_field :from_street1, class: 'form-control' %>
+  <div class="panel-info">
+    <div class="panel-heading">Source</div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6"> 
+          <%= f.label :name %>
+          <%= f.text_field :from_name, class: 'form-control', :placeholder => "John Doe" %>
+          
+          <%= f.label :street_address_1 %>
+          <%= f.text_field :from_street1, class: 'form-control', :placeholder => "1234 West 5th Street" %>
 
-      <%= f.label :street_address_2 %>
-      <%= f.text_field :from_street2, class: 'form-control' %>
-    </div>
-    <div class="col-md-6"> 
+          <%= f.label :street_address_2 %>
+          <%= f.text_field :from_street2, class: 'form-control', :placeholder => "APT 123"%>
+        </div>
+        <div class="col-md-6"> 
 
-      <%= f.label :city %>
-      <%= f.text_field :from_city, class: 'form-control' %>
+          <%= f.label :city %>
+          <%= f.text_field :from_city, class: 'form-control', :placeholder => "Berkeley"%>
 
-      <%= f.label :state %>
-      <%= f.text_field :from_state, class: 'form-control' %>
+          <%= f.label :state %>
+          <%= f.text_field :from_state, class: 'form-control', :placeholder => "California" %>
 
-      <%= f.label :zipcode%>
-      <%= f.text_field :from_zip, class: 'form-control' %>
-    </div>
-  </div>
-
-  <div class="row top10">
-    <p class="left5"><b>Destination</b></p>
-    <div class="col-md-6">
-      <%= f.label :name %>
-      <%= f.text_field :to_name, class: 'form-control' %>
-      
-      <%= f.label :street_address_1 %>
-      <%= f.text_field :to_street1, class: 'form-control' %>
-
-      <%= f.label :street_address_2 %>
-      <%= f.text_field :to_street2, class: 'form-control' %>
-    </div>
-    <div class="col-md-6">
-      <%= f.label :city %>
-      <%= f.text_field :to_city, class: 'form-control' %>
-
-      <%= f.label :state %>
-      <%= f.text_field :to_state, class: 'form-control' %>
-
-      <%= f.label :zipcode %>
-      <%= f.text_field :to_zip, class: 'form-control' %>
+          <%= f.label :zip_code%>
+          <%= f.text_field :from_zip, class: 'form-control', :placeholder => "94704-1234"%>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="row top10">
-    <p class="left5"><b>Package Details</b></p>
-    <div class="col-md-6">
-      <%= f.label :width %>
-      <%= f.text_field :width, class: 'form-control' %>
-      
-      <%= f.label :length %>
-      <%= f.text_field :length, class: 'form-control' %>
-    </div>
-    <div class="col-md-6">
-      <%= f.label :height %>
-      <%= f.text_field :height, class: 'form-control' %>
+  <div class="panel-success">
+    <div class="panel-heading">Destination</div>
+    <div class="panel-body">
+        <div class="row">
+          <div class="col-md-6">
+            <%= f.label :name %>
+            <%= f.text_field :to_name, class: 'form-control', :placeholder => "John Doe" %>
+            
+            <%= f.label :street_address_1 %>
+            <%= f.text_field :to_street1, class: 'form-control', :placeholder => "1234 West 5th Street" %>
 
-      <%= f.label :weight %>
-      <%= f.text_field :weight, class: 'form-control' %>
+            <%= f.label :street_address_2 %>
+            <%= f.text_field :to_street2, class: 'form-control', :placeholder => "APT 123" %>
+          </div>
+          <div class="col-md-6">
+            <%= f.label :city %>
+            <%= f.text_field :to_city, class: 'form-control', :placeholder => "Berkeley" %>
+
+            <%= f.label :state %>
+            <%= f.text_field :to_state, class: 'form-control', :placeholder => "California" %>
+
+            <%= f.label :zip_code %>
+            <%= f.text_field :to_zip, class: 'form-control', :placeholder => "94704-1234" %>
+          </div>
+        </div>
     </div>
   </div>
 
-  <div class="row top10 left1">
-  <%= f.submit "Make my label", class: "btn btn-primary" %>
+  <div class="panel-warning">
+    <div class="panel-heading">Package Details</div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.label 'Width (inches)' %>
+          <%= f.text_field :width, class: 'form-control', :placeholder => "10" %>
+          
+          <%= f.label 'Length (inches)' %>
+          <%= f.text_field :length, class: 'form-control', :placeholder => "10"%>
+        </div>
+        <div class="col-md-6">
+          <%= f.label 'Height (inches)' %>
+          <%= f.text_field :height, class: 'form-control', :placeholder => "10" %>
+
+          <%= f.label 'Weight (ounces)' %>
+          <%= f.text_field :weight, class: 'form-control', :placeholder => "100" %>
+        </div>
+      </div>
+      <div class="row top10 left1">
+        <%= f.submit "Make my label", class: "btn btn-primary" %>
+      </div>
+    </div>
   </div>
+
 <% end %>
 

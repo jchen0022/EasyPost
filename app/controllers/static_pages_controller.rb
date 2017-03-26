@@ -17,6 +17,13 @@ class StaticPagesController < ApplicationController
         :zip => info[:to_zip],
       )
 
+      from_params = [info[:from_name], info[:from_street1], info[:from_street2], info[:from_city], info[:from_state]]
+      for item in from_params
+        if not item.is_a? String
+          @valid = false
+        end
+      end
+
       from_address = EasyPost::Address.create(
         :name => info[:from_name],
         :street1 => info[:from_street1],
@@ -26,6 +33,12 @@ class StaticPagesController < ApplicationController
         :zip => info[:from_zip],
       )
 
+      parcel_params = [info[:width], info[:length], info[:height], info[:weight]]
+      for item in parcel_params
+        if not item.is_a? Integer
+          @valid = false
+        end
+      end
       parcel = EasyPost::Parcel.create(
         :width => info[:width],
         :length => info[:length],
@@ -47,9 +60,5 @@ class StaticPagesController < ApplicationController
 
       @shipment_url = shipment.postage_label.label_url
     end
-  end
-
-  def label
-    d
   end
 end

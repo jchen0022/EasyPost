@@ -1,15 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <div class="panel panel-default">
-        <div class="panel-body">
-            <% if not @filled_form %>
-              <%= render 'form' %>
-            <% else %>
-              Your package label: <a href=<%= @shipment_url %>>Label</a>
-            <% end %>
+      <% if not @filled_form %>
+        <div class="panel panel-group">
+            <%= render 'form' %>
+        </div>
+      <% else %>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            Your package label: <a href=<%= @shipment_url %>>Label</a>
           </div>
         </div>
+      <% end %>
       </div>
+    </div>
   </div>
 </div>
