@@ -62,7 +62,7 @@ class LabelValidator < ActiveModel::Validator
     width, height, length, weight = record.width, record.height, record.length, record.weight
     if width.nil? or height.nil? or weight.nil? or width.nil?
       record.errors[:width] << "Please fill in required fields"
-    elsif width > 0 and height > 0 and weight > 0 and weight > 0
+    elsif width <= 0 and height <= 0 and weight <= 0 and weight <= 0
       record.errors[:width] << "Please enter valid measurements!"
     end
   end
