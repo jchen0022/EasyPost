@@ -10,6 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20170326025642) do
+
+  create_table "labels", force: :cascade do |t|
+    t.string   "from_name"
+    t.string   "from_street1"
+    t.string   "from_street2"
+    t.string   "from_city"
+    t.string   "from_state"
+    t.string   "from_zip"
+    t.string   "to_name"
+    t.string   "to_street1"
+    t.string   "to_street2"
+    t.string   "to_city"
+    t.string   "to_state"
+    t.string   "to_zip"
+    t.float    "width"
+    t.float    "length"
+    t.float    "height"
+    t.float    "weight"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
 end

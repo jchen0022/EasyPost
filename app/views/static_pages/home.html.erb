@@ -3,12 +3,13 @@
     <div class="col-md-6 col-md-offset-3">
       <% if not @filled_form %>
         <div class="panel panel-group">
-            <%= render 'form' %>
+          <%= render 'form' %>
         </div>
       <% else %>
-        <div class="panel panel-default">
+        <div class="panel panel-primary">
+          <div class="panel-heading">Successfully generated label!</div>
           <div class="panel-body">
-            Your package label: <a href=<%= @shipment_url %>>Label</a>
+            Link to print label: <a href=<%= @shipment_url %>>Label</a>
           </div>
         </div>
       <% end %>
