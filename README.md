@@ -1,1 +1,1 @@
-<h1>EasyPost shipping label client</h1>
+<h2>EasyPost Shipping Label Client</h2>
