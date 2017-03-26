@@ -16,10 +16,13 @@
 @import "bootstrap";
 
 body {
-  padding-top: 40px;
   background-image: url('/assets/boxes3.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.main{
+  padding-top: 70px;
 }
 
 .top10 {
@@ -60,4 +63,8 @@ body {
 
 .panel-body {
   background: $gray-lighter;
+}
+
+.navbar-brand {
+  float: none;
 }
