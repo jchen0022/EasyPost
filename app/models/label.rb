@@ -68,6 +68,7 @@ end
 
 
 class Label < ApplicationRecord
+  validates :from_name, :from_street1, :from_city, :from_state, :from_zip, :to_name, :to_street1, :to_city, :to_state, :to_zip, presence: {message: "Please fill in required fields"}
   include ActiveModel::Validations
   validates_with LabelValidator
 end
