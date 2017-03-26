@@ -60,7 +60,9 @@ class LabelValidator < ActiveModel::Validator
       record.errors[:state] << "Please enter a valid state!"
     end
     width, height, length, weight = record.width, record.height, record.length, record.weight
-    unless width > 0 and height > 0 and weight > 0 and weight > 0
+    if width.nil? or height.nil? or weight.nil? or width.nil?
+      record.errors[:width] << "Please fill in required fields"
+    elsif width > 0 and height > 0 and weight > 0 and weight > 0
       record.errors[:width] << "Please enter valid measurements!"
     end
   end
@@ -69,6 +71,7 @@ end
 
 class Label < ApplicationRecord
   validates :from_name, :from_street1, :from_city, :from_state, :from_zip, :to_name, :to_street1, :to_city, :to_state, :to_zip, presence: {message: "Please fill in required fields"}
+
   include ActiveModel::Validations
   validates_with LabelValidator
 end

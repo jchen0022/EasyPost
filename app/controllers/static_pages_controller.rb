@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
   EasyPost.api_key = '9La5mw88klXUZJwieDFhhA'
 
   def home
+    @label = Label.new
     if not params.has_key?(:info)
       @filled_form = false
     else
